@@ -6,6 +6,12 @@ info:
 
 paths:
   /webhook/{providerCode}:
+    parameters:
+      - name: providerCode
+        in: path
+        required: true
+        schema:
+          type: string
     post:
       summary: "Send an event into the system for processing."
       operationId: sendEvent
