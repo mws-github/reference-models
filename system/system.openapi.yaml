@@ -1,1 +1,18 @@
 openapi: 3.0.3
+info:
+  title: System Core API
+  version: "2024-09-23"
+  description: "The core system API."
+
+paths:
+  /webhook/{providerCode}:
+    post:
+      summary: "Send an event into the system for processing."
+      operationId: sendEvent
+      requestBody:
+        required: true
+        content:
+          application/json: {}
+      responses:
+        '202':
+          description: "The event was accepted and will be queued for processing."
